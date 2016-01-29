@@ -1,28 +1,15 @@
-#include "StdAfx.h"
-#include "Comida.h"4
-Comida::Comida(int precio)
-{
-	this->precio=precio;
-	cantidadActual=100;
-	cocinado=false;
-}
+#pragma once
+#include "Comida.h"
 
-int Comida::getCantidadActual()
+class PapaFrita: public Comida
 {
-	return(cantidadActual);
-}
-bool Comida::getCocinado()
-{
-	return(cocinado);
-}
-int Comida::getPrecio()
-{
-	return(precio);
-}
-void Comida::comer()
-{
-	cantidadActual-=50;
-}
-Comida::~Comida(void)
-{
-}
+	bool pelado;
+	 
+public:
+	PapaFrita(int);
+	~PapaFrita(void);
+	void pelar();
+	void comer();
+	void cocinar();
+	bool saberSiEstaPelado();
+};
